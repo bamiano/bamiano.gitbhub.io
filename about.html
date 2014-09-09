@@ -1,0 +1,93 @@
+<title>All About Brent</title>
+
+<head>
+
+<link href="style.css" rel="stylesheet">
+
+<script type="text/javascript">
+
+function toggleSlide(direction) {
+    var elements = document.getElementsByClassName("hideable"); // gets all the "slides" in our slideshow
+    // Find the LI that's currently displayed
+    var visibleID = getVisible(elements);
+    elements[visibleID].style.display = "none"; // hide the currently visible LI
+    if(!direction) {
+        var makeVisible = prev(visibleID, elements.length); // get the previous slide
+    } else {
+        var makeVisible = next(visibleID, elements.length); // get the next slide
+    }
+    elements[makeVisible].style.display = "block"; // show the previous or next slide
+}
+function getVisible(elements) {
+    var visibleID = -1;
+    for(var i = 0; i < elements.length; i++) {
+        if(elements[i].style.display == "block") {
+            visibleID = i;
+        }
+    }
+    return visibleID;
+}
+function prev(num, arrayLength) {
+    if(num == 0) return arrayLength-1;
+    else return num-1;
+}
+function next(num, arrayLength) {
+    if(num == arrayLength-1) return 0;
+    else return num+1;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>About Brent</header>
+
+<figure position="relative" left="10px">
+<figcaption>Rosie the Pooch.</figcaption>
+<img src="http://i.imgur.com/Q60JHJ9.jpg?1" width="500" height="500" style="display:inline;" align="left"/>
+</figure>
+
+<figure position="relative" right="10px">
+<figcaption align: "right">My beautiful wife Maggie.</figcaption>
+<img src="http://i.imgur.com/eBWDlzn.jpg?2" width="550" height="500" align="right"/>
+</figure>
+
+
+<p>My name is Brent Amiano.  I was born and raised in Illinois.  I attended college in Tucson at the University of Arizona.  There I met my wife, Maggie.  We have been happily married for two years and residents of the East Bay for 3 years.  We enjoy outdoor activities like hiking, boating, and camping - especially with our 10 year old pooch, Rosalita. 
+</p>
+
+<center><img src="http://i.imgur.com/RCq4Nvy.jpg" width="500" height="400"></center>
+
+<A2>Technical/Coding Experience</A2>
+
+<p>My coding experience is limited to what I have learned from Dash, although I have been utilizing different software, inventory programs, and operating systems throughout my career.  Dash has been truly eye-opening and I am excited to expand my knowledge of coding and web development.
+</p>
+
+<A2>Contact Information</A2>
+
+<p>My phone number is (815)592-5798 and my email address is bamiano@email.arizona.edu</p>
+
+<form>
+<input type="button" value="Back" onclick="toggleSlide(false)"/>
+
+<pre>
+<ul style="list-style-type: none; margin-left: -2em;">
+	<li id="1" class="hideable" style="display: block;"><img src="http://i.imgur.com/HY8OPzp.jpg?1"></li>
+	<li id="2" class="hideable"><img src="http://i.imgur.com/JeLGHn3.jpg?1"></li>
+	<li id="3" class="hideable"><img src="http://i.imgur.com/S6h3Yag.jpg?1"></li>
+</ul>
+</pre>
+
+<input type="button" value="Forward" onclick="toggleSlide(true)"/>
+</form>
+
+
+
+
+</body>
+
+
+
+
