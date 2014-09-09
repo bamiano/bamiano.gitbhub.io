@@ -8,7 +8,7 @@
 
 function toggleSlide(direction) {
     var elements = document.getElementsByClassName("hideable"); // gets all the "slides" in our slideshow
-    // Find the LI that's currently displayed
+    // Find the List Item that's currently displayed
     var visibleID = getVisible(elements);
     elements[visibleID].style.display = "none"; // hide the currently visible LI
     if(!direction) {
@@ -44,21 +44,22 @@ function next(num, arrayLength) {
 
 <header>About Brent</header>
 
-<figure position="relative" left="10px">
-<figcaption>Rosie the Pooch.</figcaption>
-<img src="http://i.imgur.com/Q60JHJ9.jpg?1" width="500" height="500" style="display:inline;" align="left"/>
-</figure>
+<div class="figure">
+	<p>Rosie the Pooch.
+	<p><img src="http://i.imgur.com/Q60JHJ9.jpg?1" width="500" height="500" align="left"/>
+</div>
 
-<figure position="relative" right="10px">
-<figcaption>My beautiful wife Maggie.</figcaption>
-<img src="http://i.imgur.com/eBWDlzn.jpg?2" width="550" height="500" align="right"/>
-</figure>
+<div class="figure">
+	<p>My beautiful wife, Maggie.
+	<p><img src="http://i.imgur.com/eBWDlzn.jpg?2" width="550" height="500" align="right"/>
+</div>
 
 
 <p>My name is Brent Amiano.  I was born and raised in Illinois.  I attended college in Tucson at the University of Arizona.  There I met my wife, Maggie.  We have been happily married for two years and residents of the East Bay for 3 years.  We enjoy outdoor activities like hiking, boating, and camping - especially with our 10 year old pooch, Rosalita. 
 </p>
 
 <center><img src="http://i.imgur.com/RCq4Nvy.jpg" width="500" height="400"></center>
+
 
 <A2>Technical/Coding Experience</A2>
 
@@ -70,17 +71,17 @@ function next(num, arrayLength) {
 <p>My phone number is (815)592-5798 and my email address is bamiano@email.arizona.edu</p>
 
 <form>
-<input type="button" value="Back" onclick="toggleSlide(false)"/>
+<input type="button" class="button" value="Back" onclick="toggleSlide(false)"/>
 
 <pre>
 <ul style="list-style-type: none; margin-left: -2em;">
-	<li id="1" class="hideable" style="display: block;"><img src="http://i.imgur.com/HY8OPzp.jpg?1"></li>
-	<li id="2" class="hideable"><img src="http://i.imgur.com/JeLGHn3.jpg?1"></li>
-	<li id="3" class="hideable"><img src="http://i.imgur.com/S6h3Yag.jpg?1"></li>
+	<li id="1" class="hideable" style="display: block;"><img src="http://i.imgur.com/HY8OPzp.jpg?1" height="300"></li>
+	<li id="2" class="hideable"><img src="http://i.imgur.com/JeLGHn3.jpg?1" height="300"></li>
+	<li id="3" class="hideable"><img src="http://i.imgur.com/S6h3Yag.jpg?1" height="300"></li>
 </ul>
 </pre>
 
-<input type="button" value="Forward" onclick="toggleSlide(true)"/>
+<input type="button" class="button" value="Forward" onclick="toggleSlide(true)"/>
 </form>
 
 
